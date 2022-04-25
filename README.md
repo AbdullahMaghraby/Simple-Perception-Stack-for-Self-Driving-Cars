@@ -68,7 +68,7 @@ r_fit_x_int and l_fit_x_int are the x-intercepts of the right and left fits, res
 ## Process Project Videos
 
 
-
+# Hint all Pictures and Videos for tests are provided in Jupyter Notebook
 
 
 
