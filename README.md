@@ -15,38 +15,47 @@ In this project we are going to create a simple perception stack for self-drivin
 
 ## Camera Calibration
 we need to calibrate camera as our test video have curved lanes so to use Distortion Correction we need to know camera parameters
+using openCV functions cv2.findChessboardCorners() and cv2.drawChessboardCorners() are used for image calibration
 
 ## Apply Distortion Correction
-
+![](readme_file_pics\1.PNG)
 
 ## Apply a Perspective Transform
 convert the vehicle’s camera view of the scene into a top-down “bird’s-eye” view
+![](readme_file_pics\4.PNG)
 
 ## Create a Thresholded Binary Image
 using color space for lane detection
 
 ### LAB Color Space
 The Lab color space describes mathematically all perceivable colors in the three dimensions L for lightness and a and b for the color opponents green–red and blue–yellow.
+![](readme_file_pics\2.PNG)
 
 ### HLS color space
 This model was developed to specify the values of hue, lightness, and saturation of a color in each channel. The difference with respect to the HSV color model is that the lightness of a pure color defined by HLS is equal to the lightness of a medium gray, while the brightness of a pure color defined by HSV is equal to the brightness of white.
+![](readme_file_pics\3.PNG)
 
 ## Color Space Thresholding
 the white lane lines are clearly highlighted in the L-channel of the of the HLS color space, and the yellow line are clear in the B-channel of the LAP color space as well. We'll apply HLS L-threshold and LAB B-threshold to the image to highlight the lane lines.
+![](readme_file_pics\5.PNG)
 
 ## Image Processing Pipeline
 Distortion Correction then Perspective Transform thenColor Thresholding
+![](readme_file_pics\6.PNG)
 
 ## Detect the Lane Lines
 we still need to decide explicitly which pixels are part of the lines and which belong to the left line and which belong to the right line
 
 ### Sliding Window Search
 We'll compute a histogram of the bottom half of the image and find the base of the left and right lane lines. Originally these locations were identified from the local maxima of the left and right halves of the histogram, but in the final implementation we used quarters of the histogram just left and right of the midpoint. This helped to reject lines from adjacent lanes. The function identifies 50 windows from which to identify lane pixels, each one centered on the midpoint of the pixels from the window below. This effectively "follows" the lane lines up to the top of the binary image, and speeds processing by only searching for activated pixels over a small portion of the image
+![](readme_file_pics\7.PNG)
 
 ## Polyfit Using Fit from Previous Frame
 The Polyfit Using Fit from Previous Frame is another way that performs basically the same task, but alleviates much difficulty of the search process by leveraging a previous fit (from a previous video frame, for example) and only searching for lane pixels within a certain range of that fit.
+![](readme_file_pics\8.PNG)
 
 ## Visual display of the Lane Boundaries
+![](readme_file_pics\9.PNG)
 
 
 ## Lane Curvature and Vehicle Position from center of the lane
@@ -64,6 +73,7 @@ r_fit_x_int and l_fit_x_int are the x-intercepts of the right and left fits, res
 
 
 ## Writting Vheicle Position and Lane Curvature
+![](readme_file_pics\10.PNG)
 
 ## Process Project Videos
 
