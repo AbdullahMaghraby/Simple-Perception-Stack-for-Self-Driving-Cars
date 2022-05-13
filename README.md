@@ -1,7 +1,7 @@
 # Simple-Perception-Stack-for-Self-Driving-Cars
 In this project we are going to create a simple perception stack for self-driving cars (SDCs.) Although a typical perception stack for a self-driving car may contain different data sources from different sensors (ex.: cameras, lidar, radar, etc…), we’re only going to be focusing on video streams from cameras for simplicity. We’re mainly going to be analyzing the road ahead, detecting the lane lines, detecting other cars/agents on the road, and estimating some useful information that may help other SDCs stacks. The project is split into two phases. We’ll be going into each of them in the following parts.
 
-## Pipeline architecture
+## First Phase Pipeline architecture (in Jupyter notebook called Lane_Detection)
 1-Compute Camera Calibration.
 2-Apply Distortion Correction.
 3-Apply a Perspective Transform.
@@ -78,17 +78,14 @@ r_fit_x_int and l_fit_x_int are the x-intercepts of the right and left fits, res
 ## Process Project Videos
 using moviepy library
 
-# Hint all Pictures and Videos for tests are provided in Jupyter Notebook
+## Hint all Pictures and Videos for tests are provided in Jupyter Notebook
 
 
 
 
 
-# 2nd phase Vehicle Detection
+# Second Phase Vehicle Detection
 
-
-The Project
----
 
 The goals / steps of this project are the following:
 
