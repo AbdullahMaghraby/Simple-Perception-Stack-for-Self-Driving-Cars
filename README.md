@@ -84,7 +84,7 @@ using moviepy library
 
 
 
-# Second Phase Vehicle Detection
+# Second Phase Vehicle Detection (in Jupyter notebook called car_detector)
 
 
 The goals / steps of this project are the following:
